@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<h2 id="info"></h2>
+
+<script>
+    const info = document.querySelector('#info');
+
+    const ar = [12, 'beer', true, {name:'bill'}];
+
+    // for 迴圈
+    // for(let i=0; i<ar.length; i++){
+    //     info.innerHTML += `${ar[i]} <br>`;
+    // }
+    // info.innerHTML += `------ <br>`;
+
+    // ar['3'] = 'abc';
+    // for-in 迴圈
+    //i會拿到索引值
+    
+    for(let i in ar){
+        info.innerHTML += `${i}: ${ar[i]} <br>`;
+    }
+    // info.innerHTML += `------ <br>`;
+
+    // // for-of 迴圈
+    //i 會直接拿到元素值
+    // for(let i of ar){
+    //     info.innerHTML += `${i} <br>`;
+    // }
+    // info.innerHTML += `------ <br>`;
+
+    // for(let s in 'abc'){
+    //     console.log(s);
+    // }
+</script>
+</body>
+</html>

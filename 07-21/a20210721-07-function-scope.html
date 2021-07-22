@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<h2 id="info" onclick="func()"></h2>
+
+<script>
+    const info = document.querySelector('#info');
+
+    const ar = [7,8,9,10];
+    let a = 100;
+
+    (function(){ 
+       ar.pop();
+       a--;
+       info.innerHTML += 'function裡面：<br>';
+       info.innerHTML += ar +'</br>';
+       info.innerHTML += a +'</br>';
+
+   })(); //直接呼叫
+
+   (function(){ 
+       a--;
+   }());
+
+  
+   
+   func(ar,a); 
+  
+   info.innerHTML += 'function外面：<br>';
+   info.innerHTML += ar +'</br>';
+   info.innerHTML += JSON.stringify(a) +'</br>';
+
+</script>
+</body>
+</html>

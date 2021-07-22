@@ -1,0 +1,15 @@
+常用基本類型：number boolean string
+float是近似值
+number.max-value number
+number.max-safe-integer
+
+
+HTML tag (tagName,)
+DOM : Element
+DOM(XML): Node
+ELement 是node node不一定是element
+
+
+形式參數
+
+真正傳進去的值 實際參數

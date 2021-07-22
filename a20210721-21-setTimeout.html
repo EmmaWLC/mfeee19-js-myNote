@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<h2 id="info"></h2>
+
+<script>
+    const info = document.querySelector('#info');
+    let n = 0;
+
+    // 用 let 宣告，每次的迴圈裡的 i 都是各自獨立的
+    // var宣告i都會是10 因為迴圈跑的時候沒有時間間隔
+    for(let i=0; i<10;i ++){
+        setTimeout(()=>{
+            info.innerHTML += i + '<br>'; //可以用n去記就不會被影響
+        }, 500 * i);
+    }
+</script>
+</body>
+</html>

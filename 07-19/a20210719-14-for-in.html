@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<h2 id="info"></h2>
+
+<script>
+    const info = document.querySelector('#info');
+
+    const p1 = {
+        name: 'David',
+        age: 25,
+        gender: 'male',
+    };
+
+    // chrome特性 console物件案三角形展開 在展開的瞬間被計算
+
+    p1.nickname = 'Dav'; //增加屬性
+    p1['my-secret'] = 'abcde';
+
+    for(let s in p1) {
+        info.innerHTML += `${ s }: ${ p1[s] }<br>`;
+    }
+
+    //單用in是用來判斷裡面有沒有這個東西
+
+</script>
+</body>
+</html>

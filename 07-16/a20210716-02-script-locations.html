@@ -1,0 +1,30 @@
+<script>//放哪裡都跑得出來
+    console.log('0'); //可能沒版法讀到!DOCTYPE宣告
+</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log('1'); //先跑js 用戶可能看到一段時間的空白頁
+    </script>
+</head>
+<body>
+    <div class="info">
+        <h1 style="color: black">123</h1>
+        <script>
+            console.log('2');
+        </script>
+    </div>
+
+    <script>
+        console.log('3');  // best
+    </script>
+</body>
+</html>
+<script>
+    console.log('4');
+</script>

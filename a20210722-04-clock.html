@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .clock {
+            position: relative;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            border: black 1px solid;
+            background-color: #c6eef5;
+        }
+        .hand {
+            position: absolute;
+            width: 0px;
+            height: 0px;
+            left: 300px;
+            top: 300px;
+            background-color: rgb(128, 25, 25);
+           
+        }
+        .sec-hand {
+            position: absolute;
+            width: 4px;
+            height: 280px;
+            border-radius: 2px;
+            background-color: #F00;
+            left: -2px; 
+            top: -278px;
+        }
+        .min-hand {
+            position: absolute;
+            width: 10px;
+            height: 220px;
+            border-radius: 2px;
+            background-color: rgb(90, 37, 175);
+            left: -5px; 
+            top: -215px;
+        }
+        .hr-hand {
+            position: absolute;
+            width: 20px;
+            height: 180px;
+            border-radius: 2px;
+            background-color: rgb(255, 208, 0);
+            left: -10px;
+            top: -170px;
+        }
+    </style>
+    
+    
+</head>
+<body>
+
+<div class="clock">
+    <div class="hand secHand">
+        <div class="sec-hand"></div>
+    </div>
+    <div class="hand minHand">
+        <div class="min-hand"></div>
+    </div>
+    <div class="hand hrHand">
+        <div class="hr-hand"></div>
+    </div>
+</div>
+
+<script>
+    //呈現刻度，每一分鐘小刻度，每五分鐘大刻度
+    
+    const secHand = document.querySelector('.secHand');
+    const minHand = document.querySelector('.minHand');
+    const hrHand = document.querySelector('.hrHand');
+
+    // 秒針等速度前進
+
+    const runClock = ()=>{
+        const now = new Date;
+        secHand.style.transform = `rotate(${ now.getSeconds()*6 + now.getMilliseconds()*0.006 }deg)`;
+        minHand.style.transform = `rotate(${ now.getMinutes()*6 + now.getSeconds()*0.1 }deg)`;
+        hrHand.style.transform = `rotate(${ now.getHours()*30 + now.getMinutes()*.5}deg)`;
+        setTimeout(runClock, 30);
+    }
+
+    runClock();
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<h2 id="info"></h2>
+
+<script>
+    const info = document.querySelector('#info');
+
+    const myForEach = function (myArgFunc) {
+        if(! (myArgFunc instanceof Function)) { //是不是function
+            return;
+        }
+
+        for(let s in this){
+            myArgFunc(s, this[s]);
+        }
+    };
+
+    const p1 = { name: 'Bill', age: 26, gender: 'male' };
+
+    myForEach.call(p1, function(k,value){
+        info.innerHTML += `${k}: ${value} <br>`;
+    });
+
+
+</script>
+</body>
+</html>

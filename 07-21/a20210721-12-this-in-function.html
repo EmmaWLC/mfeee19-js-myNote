@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<h2 id="info"></h2>
+
+<script>
+    const info = document.querySelector('#info');
+
+    const myFunc = function () {
+        console.log(this, this.name); // 全域拿到的物件是window
+
+
+
+    };
+
+    const obj1 = { f: myFunc, name: 'obj1' };
+    const obj2 = { f: myFunc, name: 'obj2' };
+
+    myFunc();
+    obj1.f();
+    obj2.f();
+    myFunc.call(obj1);
+
+    const f2 = myFunc.bind(obj2);  //綁定對象
+    f2();
+
+</script>
+</body>
+</html>

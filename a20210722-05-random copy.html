@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .rect{
+            width: 600px;
+            height: 800px;
+            border: 1px dotted green;
+            position: relative;
+        }
+
+        .ball {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            /* background-color: rgb(181, 248, 126); */
+            position: absolute;
+            top: 30px;
+            left: 100px;
+            background-color: hsl(128);
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="rect">
+        <div class="ball"></div>
+
+    </div>
+
+<script>
+    let rect = document.querySelector('.rect');
+
+    for( let i=0; i<=100; i++){
+        let ball = document.createElement('div');
+
+        ball.className = 'ball';
+        let size = 15 + Math.floor(Math.random()*16);
+        ball.style.width =  size + 'px';
+        ball.style.height = size + 'px';
+        ball.style.top = Math.floor(Math.random()*800) + 'px';
+        ball.style.left = Math.floor(Math.random()*600) + 'px';
+        ball.style.backgroundColor = `hsl( ${(Math.floor(Math.random()*360))} ,100%,50%)`;
+
+        rect.appendChild(ball);
+
+    }
+
+    
+        
+    
+
+    
+
+
+
+    
+    
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<h2 id="info"></h2>
+
+<script>
+    const info = document.querySelector('#info');
+
+
+    // global vars
+    let a = 100;
+    let b = 200;
+
+    if(b>a) {
+        let c = 300;  // let, const 以任何的大括號為領域範圍
+        var d = 400;  // var 以函式的大括號為領域範圍
+
+        (function () {
+            let a = 10;
+            let b = 20;
+
+            console.log(a, b, c, d);
+        })();
+    }
+
+
+    console.log(a, b, d);  // 看不到 c
+
+
+
+</script>
+</body>
+</html>

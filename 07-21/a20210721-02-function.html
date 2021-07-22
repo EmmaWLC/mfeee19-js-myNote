@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<h2 id="info" onclick="func()"></h2>
+
+<script>
+    const info = document.querySelector('#info');
+
+    function 函式名稱(/*參數列*/) {
+
+        /*
+        函數的主體
+        */
+
+    }
+
+    //傳統的func 定義在後面寫在前面也會執行有提升效果 可在定義前呼叫
+    func(5);
+
+    // function func(n) {
+    //     alert('a');
+    //     info.innerHTML = n*n + '<br>';
+    // }
+
+
+    function func(n) {
+        return n*n;
+    }
+
+    //function name不能和變數名稱一樣名字
+    info.innerHTML =  func(5)*4 + '<br>';
+
+</script>
+</body>
+</html>

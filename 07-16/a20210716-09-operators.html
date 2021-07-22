@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+<div id="info">123</div>
+    <script>
+
+        //===會判斷類型 較為嚴謹
+        //a+b 其中一個是字串就會被轉為字串
+        // a=6 b='7' a+b = '67'
+        // *號轉換為數值
+        // 字串比大小先比第一個字符
+        // 7 && 5 後面也要判斷 給5 只有js這樣
+        //7 && 'aaa' 'aaa'
+
+        console.log( !! 0 ); //false
+        console.log( !! '' ); //字串是whitespace也是true
+        console.log( !! null );
+        console.log( !! undefined );
+
+        // 註解
+        /*
+            區塊註解
+         */
+        let a, b, c;
+        let d, e, f;
+
+        c = (a=5) || (b=7);
+        //a true b不判斷
+
+        console.log('a = ', a);
+        console.log('b = ', b); //undefined
+        console.log('c = ', c);
+
+        f = (d=0) && (e=7);
+        //false f=0;
+
+        console.log('d = ', d);
+        console.log('e = ', e);
+        console.log('f = ', f);
+
+        // b = a ?? 99
+        // a true b=a false b=99
+
+        // a=7 b=3 a & b  3 轉換成二進位計算
+        // a.toString(2) 轉換成二進位字串
+
+        // n=254 str = n.to String(19) 用19進位轉換
+        // parseInt(str, 19) 轉回數字
+
+        // 判斷是不是數值 isNAN(Number('7'))
+
+    </script>
+</body>
+</html>

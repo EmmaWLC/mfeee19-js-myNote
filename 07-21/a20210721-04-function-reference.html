@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<h2 id="info" onclick="func()"></h2>
+
+<script>
+    const info = document.querySelector('#info');
+
+   function func(ar) {
+      
+   }
+
+   //以指定運算的方式定義函式
+
+   const func = function(ar, b){
+       ar.pop();
+       b--;
+   };
+
+   const ar1 = [7,8,9,10];
+   let a = 100;
+   info.innerHTML += ar1 +'<br>';
+   info.innerHTML += a +'<br>';
+   func(ar1,a); 
+   //call by reference, call by value js無法決定 只要是複雜類型就是傳遞參照 基本類型傳遞值
+   info.innerHTML += ar1 +'<br>';
+   info.innerHTML += a +'<br>';
+   
+
+</script>
+</body>
+</html>

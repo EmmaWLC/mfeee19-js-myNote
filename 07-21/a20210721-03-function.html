@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<h2 id="info" onclick="func()"></h2>
+
+<script>
+    const info = document.querySelector('#info');
+
+   function func(n) {
+       console.log(n); //只會列第一個
+       console.log(arguments); //是舊的寫法 所有的參數
+       console.log([...arguments]);  //展開成陣列
+   }
+
+   func(2, 5, 7);
+
+   //ES6用法
+
+   function func2(...m){ //集合成陣列
+       console.log(m);
+   }
+
+   function func2(a,...m){ //集合成陣列 a不能放後面 ...其餘的給array
+       console.log(m);
+   }
+
+   func2(5,7,9);
+
+   const ar = [3, 9, 12, 5, 18];
+
+   console.log( Math.max(...ar) );
+
+</script>
+</body>
+</html>

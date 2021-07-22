@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #rect {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            border: green 1px dotted;
+        }
+        .ball {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            line-height: 40px;
+            text-align: center;
+            background-color: #F00;
+            color: white;
+            border: gray 1px solid;
+        }
+    </style>
+</head>
+<body>
+<div id="rect">
+<!--    <div class="ball">7</div>-->
+
+</div>
+<script>
+    //讓圓形往下跑(等速或隨機速度）
+    const rect = document.querySelector('#rect');
+
+    const num = 12; //排成圓形（環形）
+    const angUnit = Math.PI*2/num; //單位角度
+
+
+    for(let i=0; i<num; i++){
+        let b = document.createElement('div');
+        const size = 15 + Math.floor(Math.random()*16);
+        b.className = 'ball';
+        b.innerHTML = i+1;
+        b.style.top = 300 - 20 + 200*Math.sin(i*angUnit) +'px';
+        b.style.left = 400 - 20 + 200*Math.cos(i*angUnit) +'px';
+       
+        //數字逆時鐘轉60度 (Math.PI/3)
+        b.style.top = 300 - 20 + 200*Math.sin(i*angUnit - Math.PI/3) +'px';
+        b.style.left = 400 - 20 + 200*Math.cos(i*angUnit - Math.PI/3) +'px';
+       
+
+        rect.appendChild(b);
+    }
+
+
+</script>
+</body>
+</html>

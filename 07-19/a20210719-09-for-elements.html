@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #rect {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            border: green 1px dotted;
+        }
+        .ball {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            line-height: 40px;
+            text-align: center;
+            background-color: #F00;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div id="rect">
+<!--    <div class="ball">7</div>-->
+
+</div>
+<script>
+    const rect = document.querySelector('#rect');
+
+    for(let i=0; i<10; i++){
+        let b = document.createElement('div');
+        b.className = 'ball';
+        b.innerHTML = i+1;
+        b.style.top = '50px';  // 設定 inline style
+        b.style.left = 50*i + 'px';
+        rect.appendChild(b);
+    }
+
+</script>
+</body>
+</html>

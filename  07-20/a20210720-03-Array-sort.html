@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<h2 id="info"></h2>
+
+<script>
+    const info = document.querySelector('#info');
+
+    const ar = [29,3,30];
+
+    //數值由小到大 是由小到大就不用寫function
+
+    ar.sort(function(a,b){   //第一個值丟到b
+        console.log(a,b);
+        return a-b; //負的是true
+
+    });
+
+    //數值由大到小
+
+    ar.sort(function(a,b){   //第一個值丟到b
+        console.log(a,b);
+        return b-a; 
+
+    });
+
+    //亂數排序
+
+    ar.sort(function(a,b){   //第一個值丟到b
+        console.log(a,b);
+        return Math.random() - .5;; 
+
+    });
+
+    info.innerHTML += ar.toString() + '<br>';
+
+
+</script>
+</body>
+</html>

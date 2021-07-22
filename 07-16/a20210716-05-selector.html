@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+<div id="info">123</div>
+
+    <script>
+        // 標籤下id info 會變成 window 的屬性，但少利用這個特性
+        console.log(info);
+
+        info.innerHTML = '<h2>Hello~</h2>';
+    </script>
+</body>
+</html>

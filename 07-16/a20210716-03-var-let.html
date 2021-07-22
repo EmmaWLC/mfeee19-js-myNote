@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+<div id="info">123</div>
+
+    <script>
+        var aaa = 10;
+        var alert = 30; // 蓋掉原本 window.alert() 的功能
+        let bbb = 20;
+
+        console.log('aaa:', aaa);
+        console.log('bbb:', bbb);
+        console.log('window.aaa:', window.aaa);
+        console.log('window.bbb:', window.bbb);
+
+        alert('hello'); // 跳錯誤
+        //confirm 是否 prompt 有輸入框 js會停下來
+
+    </script>
+</body>
+</html>
