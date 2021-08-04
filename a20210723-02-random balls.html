@@ -22,7 +22,6 @@
             background-color: #F00;
             color: white;
             border: gray 1px solid;
-            transition: 1s;
         }
     </style>
 </head>
@@ -32,11 +31,13 @@
 
 </div>
 <script>
-    //讓圓形往下跑(等速或隨機速度）
     const rect = document.querySelector('#rect');
+    const balls = [];
+
+    //飄到某個位置再往下拉
 
     function randomRGB() {
-        let c = Math.floor(16777216*Math.random());  // 256*256*256
+        let c = Math.floor(16777216*Math.random());
         c = c.toString(16); // 轉換為 16 進位的字串
         return '#' + '000000'.slice(c.length) + c;
     }
@@ -49,22 +50,23 @@
         b.style.left = Math.floor(Math.random()*800) +'px';
         b.style.width = size +'px';
         b.style.height = size +'px';
-        b.style.transition = Math.floor(Math.random()*50) + 's';
-        // b.style.backgroundColor = randomRGB();
-        b.style.backgroundColor = `hsl(${Math.floor(Math.random()*360)},100%,50%)`;
-
+        b.style.backgroundColor = randomRGB();
+        balls.push(b);
         rect.appendChild(b);
     }
 
-    const ballsList = document.querySelectorAll('.ball');
-    setTimeout(abc,500);
-    let a = '50px';
-    parseInt(a);
-    function abc(){
-        ballsList.forEach(ele => {ele.style.top= parseInt(ele.style.top,10)+Math.floor(Math.random()*500)+'px';} );
+    function doAni(){
+        for(let b of balls){
+            const dx = Math.floor(Math.random()*5)-2;
+            const dy = Math.floor(Math.random()*5);
+            b.style.top = parseInt(b.style.top)-dy +'px';
+            b.style.left = parseInt(b.style.left)+dx +'px';
+        }
+
+        setTimeout(doAni, 30);
     }
-    
- 
+    doAni();
+
 
 </script>
 </body>

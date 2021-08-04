@@ -26,34 +26,27 @@
     </style>
 </head>
 <body>
-<div id="rect">
-<!--    <div class="ball">7</div>-->
-
-</div>
+<div id="rect"></div>
+<script src="lib/ball.js"></script>
 <script>
-    //讓圓形往下跑(等速或隨機速度）
     const rect = document.querySelector('#rect');
+    const balls = [];
 
-    const num = 12; //排成圓形（環形）
-    const angUnit = Math.PI*2/num; //單位角度
-
-
-    for(let i=0; i<num; i++){
-        let b = document.createElement('div');
-        const size = 15 + Math.floor(Math.random()*16);
-        b.className = 'ball';
-        b.innerHTML = i+1;
-        b.style.top = 300 - 20 + 200*Math.sin(i*angUnit) +'px';
-        b.style.left = 400 - 20 + 200*Math.cos(i*angUnit) +'px';
-       
-        //數字逆時鐘轉60度 (Math.PI/3)
-        // b.style.top = 300 - 20 + 200*Math.sin(i*angUnit - Math.PI/3) +'px';
-        // b.style.left = 400 - 20 + 200*Math.cos(i*angUnit - Math.PI/3) +'px';
-       
-
-        rect.appendChild(b);
+    for(let i=0; i<100; i++){
+        let b = new Ball(rect);
+        balls.push(b);
     }
 
+    function doAni(){
+        for(let b of balls){
+            const dx = Math.floor(Math.random()*5)-2;
+            const dy = Math.floor(Math.random()*5);
+            b.y -= dy;
+            b.x += dx;
+        }
+        setTimeout(doAni, 30);
+    }
+    doAni();
 
 </script>
 </body>

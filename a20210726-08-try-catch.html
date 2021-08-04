@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    // 錯誤： 1. 語法錯誤, 2. 執行時期發生的錯誤, 3. 邏輯錯誤
+
+    // 自訂丟出錯誤
+    // throw 'abc';
+    // throw new Error('自訂的錯誤訊息');
+
+    try {
+        // 測試區
+    } catch(ex) {
+        //  有捕捉到錯誤時的處理區
+    } finally {
+        // 鐵定會執行區
+    }
+
+    const str ='{a:12}'; // 錯誤的 JSON 格式
+    let obj;
+    
+    try {
+        obj = JSON.parse(str);
+    } catch(ex){
+        console.log(ex);
+    }
+    console.log("haha");
+
+</script>
+</body>
+</html>

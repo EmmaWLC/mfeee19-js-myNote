@@ -32,39 +32,41 @@
 
 </div>
 <script>
-    //讓圓形往下跑(等速或隨機速度）
     const rect = document.querySelector('#rect');
 
-    function randomRGB() {
-        let c = Math.floor(16777216*Math.random());  // 256*256*256
-        c = c.toString(16); // 轉換為 16 進位的字串
-        return '#' + '000000'.slice(c.length) + c;
-    }
+    const num = 12; // 排成圓形 (環狀)
+    const angUnit = Math.PI*2/num; // 單位角度
 
-    for(let i=0; i<100; i++){
+    const data = [];
+
+    for(let i=0; i<num; i++){
         let b = document.createElement('div');
-        const size = 15 + Math.floor(Math.random()*16);
         b.className = 'ball';
-        b.style.top = Math.floor(Math.random()*600) +'px';
-        b.style.left = Math.floor(Math.random()*800) +'px';
-        b.style.width = size +'px';
-        b.style.height = size +'px';
-        b.style.transition = Math.floor(Math.random()*50) + 's';
-        // b.style.backgroundColor = randomRGB();
-        b.style.backgroundColor = `hsl(${Math.floor(Math.random()*360)},100%,50%)`;
+        b.innerHTML = i+1;
+        b.id = 'b'+ (i+1);
 
+
+        // 第一個位罝的座標
+        const obj = {target: b, p1:{x: 400-20, y: 300-20}};
+        b.style.left = obj.p1.x + 'px';
+        b.style.top = obj.p1.y + 'px';
+
+        // 第二個位罝的座標
+        obj.p2 = {
+            x: 400 - 20 + 200*Math.cos(i*angUnit),
+            y: 300 - 20 + 200*Math.sin(i*angUnit),
+        }
+        data.push(obj);
         rect.appendChild(b);
     }
 
-    const ballsList = document.querySelectorAll('.ball');
-    setTimeout(abc,500);
-    let a = '50px';
-    parseInt(a);
-    function abc(){
-        ballsList.forEach(ele => {ele.style.top= parseInt(ele.style.top,10)+Math.floor(Math.random()*500)+'px';} );
+    for(let i in data) {
+        setTimeout(() => {
+            const b = data[i].target;
+            b.style.left = data[i].p2.x + 'px';
+            b.style.top = data[i].p2.y + 'px';
+        }, 50*i);
     }
-    
- 
 
 </script>
 </body>

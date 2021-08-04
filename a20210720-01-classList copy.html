@@ -8,22 +8,41 @@
 </head>
 <body>
 
-<div class="btn bold red ">Hello</div>
-
+<div class="btn bold red black yellow">Hello</div>
+<div class="">Hello</div>
 <h2 id="info"></h2>
 
 <script>
     const div = document.querySelector('div');
     const info = document.querySelector('#info');
 
-
     info.innerHTML +=  div.className + '<br>';
     info.innerHTML +=  JSON.stringify(div.classList) + '<br>';
     info.innerHTML +=  div.classList.contains('red') + '<br>';
+    info.innerHTML +=  div.classList.contains('la') + '<br>';
 
     const ar = [...div.classList];
+    const ar2 = div.className.split(' ');
+    let arr = [];
+    let myDiv = document.createElement('div');
+    
+    // myDiv.classList.add('have');
+    // myDiv.classList.add('apple');
+    
+    // myDiv.className = "have apple";
+    //className是字串 沒有remove
+
+    //myDiv.className.add("have"); error
+    myDiv.className+="have";
+    myDiv.className+=" apple";
+    myDiv.classList.remove("have");
+    //myDiv.className.remove("apple");
+    document.body.appendChild(myDiv);
+  
+  
     info.innerHTML +=  JSON.stringify( ar ) + '<br>';
     info.innerHTML +=  ar.includes('red') + '<br>';
+    info.innerHTML +=  div.className.includes('la') + '<br>';
 
 </script>
 </body>

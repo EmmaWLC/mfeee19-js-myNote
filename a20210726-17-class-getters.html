@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+<script>
+    class Person {
+        // 建構函式、建構子
+        constructor(name='noname', age=0) {
+            this._name = name;
+            this._age = age;
+        }
+
+        toString(){
+            const {_name:name, _age:age} = this;
+            return JSON.stringify({name, age});
+        }
+        // getter read only
+        get name(){
+            return this._name;
+        }
+
+        // setter
+        // set name(val){
+        //     this._name = val;
+        // }
+    }
+
+    class Employee extends Person {
+
+        constructor(eID='', name='', age=0) {
+            super(name, age);
+            this._eID = eID;
+        }
+        toString() {
+            const {_name:name, _age:age, _eID:eID} = this;
+            return JSON.stringify({name, age, eID});
+        }
+
+    }
+
+
+
+    const p1 = new Person('bill', 23);
+    const p2 = new Employee('A002', 'david', 27);
+
+    console.log(p1.toString());
+    console.log(p2.toString());
+    console.log(p1.name); // 使用時像屬性，實際是呼叫方法
+    console.log(p2.name);
+
+
+
+
+</script>
+</body>
+</html>
